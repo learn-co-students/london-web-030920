@@ -38,4 +38,8 @@ class Artist
     self.all.map {|artist| artist.years_experience}.sum
   end
 
+  def self.most_prolific
+    Artist.all.max_by {|artist| artist.how_prolific}
+  end
+
 end
