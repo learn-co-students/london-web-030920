@@ -9,7 +9,6 @@ class Artist
     @@all << self
   end
 
-
   def paintings
     Painting.all.select { |painting| painting.artist == self }
   end
