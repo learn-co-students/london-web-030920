@@ -1,0 +1,14 @@
+READ
+- [x] index    GET    /books
+- [x] show     GET    /books/:id
+
+CREATE
+- [x] new      GET    /books/new
+- [x] create   POST   /books
+
+UPDATE
+- [x] edit     GET    /books/:id/edit
+- [x] update   PATCH  /books/:id
+
+DELETE
+- [x] delete   DELETE /books/:id

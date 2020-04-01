@@ -1,0 +1,16 @@
+<!-- Layout page - when a client makes a GET request to our server, this page will be rendered first, so every page will contain this HTML. -->
+<!DOCTYPE html>
+  <html lang="en" dir="ltr">
+  <head>
+  <meta charset="utf-8">
+  <title></title>
+  </head>
+  <body>
+    <h1>My Library</h1>
+    <nav>
+      <a href="/books">All Books</a>
+      <a href="/books/new">Create a Book</a>
+    </nav>
+    <%= yield %>
+  </body>
+</html>
