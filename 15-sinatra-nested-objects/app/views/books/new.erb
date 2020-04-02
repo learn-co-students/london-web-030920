@@ -1,0 +1,19 @@
+<form class="" action="/books" method="post">
+  <label for="">Title</label>
+  <input type="text" name="[book]title" value=""><br>
+
+  <label for="">Author</label>
+  <input type="text" name="[book]author" value=""><br>
+
+  <label for="">Snippet</label>
+  <input type="text" name="[book]snippet" value=""><br>
+
+  <select name="[book]year_id">
+    <% @years.each do |year| %>
+      <option value="<%= year.id %>"><%= year.year %></option>
+    <% end%>
+  </select>
+
+  <br>
+  <input type="submit" name="" value="Save Book">
+</form>

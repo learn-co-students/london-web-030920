@@ -1,0 +1,4 @@
+- [x] create Year model, relate it to Book
+- [x] seed Years
+- [x] create a `new` view that includes a <select /> tag
+- [x] handle the `author_id` properly in create#books
