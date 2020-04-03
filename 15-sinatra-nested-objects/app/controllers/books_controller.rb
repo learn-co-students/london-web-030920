@@ -2,7 +2,6 @@ class BooksController < ApplicationController
   # index
   get "/books" do
     @books = Book.all.reverse
-
     erb :"books/index"
   end
 
