@@ -5,3 +5,19 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+puts "Started seeding #{Time.now}"
+
+Doctor.destroy_all
+30.times do
+  doc = Doctor.create(
+    {
+      name: Faker::Name.last_name,
+      speciality: Faker::Cannabis.health_benefit,
+      age: (27..60).to_a.sample,
+    }
+  )
+  puts "created doctor: #{doc.id}, #{doc.name}"
+end
+
+puts "Seed complete #{Time.now}"

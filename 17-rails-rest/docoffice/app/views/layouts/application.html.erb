@@ -10,6 +10,13 @@
   </head>
 
   <body>
+    <h1>
+      <%= link_to "DocApp 🏥", doctors_path %>
+    </h1>
+    <nav>
+      <%= link_to "new doctor", new_doctor_path %>
+    </nav>
+    <hr>
     <%= yield %>
   </body>
 </html>
