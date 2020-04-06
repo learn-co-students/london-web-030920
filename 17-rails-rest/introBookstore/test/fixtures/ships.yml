@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  built_year: 1
+  name: MyString
+  captain: one
+  n_sails: 1
+
+two:
+  built_year: 1
+  name: MyString
+  captain: two
+  n_sails: 1
