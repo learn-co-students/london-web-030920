@@ -1,0 +1,23 @@
+<h1>I am the Destination Show page</h1>
+
+<%=@destination.name%>
+<%=@destination.country%>
+
+<ul><%@destination.most_recent_five.each do |post|%>
+<li><%= link_to post.title, post_path(post)%></li>
+</ul>
+<%end%>
+
+
+
+<% if @destination.featured_post %> 
+
+<h3> This is the most popular post for <%=@destination.name%>: 
+<%=link_to @destination.featured_post.title, post_path(@destination.featured_post)%> likes</h3>
+<%else%> 
+<strong>No featured posts yet!<strong>
+<%end%>
+
+
+<h3> The average age of bloggers who blog about <%=@destination.name%> is <strong><%=@destination.average_age_of_blogger%></strong></h3>
+

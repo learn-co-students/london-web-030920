@@ -1,0 +1,24 @@
+<h1>I am the Blogger Show page</h1>
+
+<div>
+<h2><%=@blogger.name%></h2>
+</div>
+<div>
+<h3> My posts have a total of: <%=@blogger.total_likes%> likes</h3>
+</div>
+<div>
+<h3> This is my most popular post: <%=link_to @blogger.featured_post.title, post_path(@blogger.featured_post)%> likes</h3>
+</div>
+
+<div>
+    My top 5 destinations: 
+    <ul>
+    <%@blogger.top_five_destinations.each do |destination|%>
+    <li><%= link_to destination.name, destination_path(destination)%></li>
+    <%end%>
+    </ul>
+</div>
+
+
+
+
