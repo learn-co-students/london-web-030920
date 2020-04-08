@@ -1,0 +1,12 @@
+<%= form_for @patient do |f| %>
+  <%= f.label :name%>
+  <%= f.text_field :name%>
+  <%# !!! %>
+  <%# # First arg is method we want to call on @patient (:doctor_id),
+   # Second The collection we want to use to populate the dropdown(Doctor.all),
+   # Third The value we want in our params: Doctor#id,
+   # Fourth What do we want to display in the tag itself? Doctor#name %>
+  <%= f.collection_select :doctor_id, @doctors, :id, :name %>
+  <%# !!! %>
+  <%= f.submit %>
+<% end%>

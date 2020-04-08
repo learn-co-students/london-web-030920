@@ -1,0 +1,14 @@
+<h2>
+  Doctors Index 👩‍⚕️👨‍⚕️
+</h2>
+
+<ul>
+  <% @doctors.all.each do |doctor|%>
+    <li>
+      <%= link_to doctor.name, doctor %>
+      <% doctor.patients.size.times do %>
+        🏥
+      <% end %>
+    </li>
+  <% end %>
+</ul>

@@ -1,0 +1,9 @@
+<h2>
+  <%= @patient.name%>
+</h2>
+
+<%= link_to "edit that patient", edit_patient_path(@patient) %>
+
+<p>
+  Their assigned doctor is <%= @patient.doctor.name %>
+</p>

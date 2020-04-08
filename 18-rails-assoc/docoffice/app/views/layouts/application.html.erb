@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Docoffice</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <h1>
+      <%= link_to "DocApp 🏥", doctors_path %>
+    </h1>
+    <nav>
+      <%= link_to "new doctor", new_doctor_path %>
+      <%= link_to "new patient", new_patient_path %>
+    </nav>
+    <hr>
+    <%= yield %>
+  </body>
+</html>
