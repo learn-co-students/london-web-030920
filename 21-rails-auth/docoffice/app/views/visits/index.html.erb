@@ -1,0 +1,12 @@
+<h2>
+  Visits Index 👩‍⚕️👨‍⚕️
+</h2>
+
+<ul>
+  <% @visits.all.each do |visit|%>
+    <li>
+      Doctor: <%= Doctor.find(visit.doctor_id).name %>
+      Patient: <%= User.find(visit.user_id).name %>
+    </li>
+  <% end %>
+</ul>

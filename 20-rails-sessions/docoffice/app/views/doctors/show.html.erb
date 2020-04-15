@@ -1,0 +1,18 @@
+<h2>
+  <%= @doctor.name%>
+</h2>
+
+<p>
+  This doctor is <%= @doctor.age %> years old.
+  Specializes in: <%= @doctor.speciality %>
+</p>
+
+<h3>Patient list:</h3>
+
+<ul>
+  <% @doctor.patients.each do |patient|%>
+    <li> 
+      <%= link_to patient.name, patient%>
+    </li>
+  <% end %>
+</ul>
