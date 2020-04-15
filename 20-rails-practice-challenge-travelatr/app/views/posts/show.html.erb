@@ -1,0 +1,22 @@
+<h1>I am the Post Show page</h1>
+
+<div class="main">
+    <h2>Title:<%=@post.title%></h2>
+</div>
+
+<div>
+    <p><%=@post.content%></p>
+</div>
+<div>
+    This post has: <strong><p><%=@post.likes%></strong></p>
+</div>
+
+<div>
+    <%= link_to @post.blogger.name, blogger_path(@post.blogger)%>
+</div>
+<div>
+    <%= link_to @post.destination.name, destination_path(@post.destination)%>
+</div>
+<div>
+    <%= button_to "Like", like_post_path(@post)%>
+</div>
