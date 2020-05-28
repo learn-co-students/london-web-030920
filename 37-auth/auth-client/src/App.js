@@ -1,26 +1,52 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+class App extends React.Component {
+  state = {};
+
+  loginGood = () => {
+    const body = JSON.stringify({
+      user: {
+        username: "daniel",
+        password: "cat",
+      },
+    });
+    fetch("http://localhost:3001/api/v1/login", {
+      method: "POST",
+      body,
+    })
+      .then((data) => data.json())
+      .then(console.log);
+  };
+
+  loginBad = () => {
+    console.log("login bad");
+  };
+
+  logout = () => {
+    console.log("logout");
+  };
+
+  getAllUserData = () => {
+    fetch("http://localhost:3001/api/v1/users", {
+      headers: {
+        Authorization: `Bearer ${localStorage.getItem("token")}`,
+      },
+    })
+      .then((data) => data.json())
+      .then(console.log);
+  };
+
+  render = () => {
+    return (
+      <div>
+        <button onClick={this.loginGood}>good login</button>
+        <button onClick={this.loginBad}>bad login</button>
+        <button onClick={this.logout}>logout</button>
+        <button onClick={this.getAllUserData}>getAllUserData</button>
+      </div>
+    );
+  };
 }
 
 export default App;

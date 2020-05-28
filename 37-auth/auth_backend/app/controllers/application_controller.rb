@@ -1,7 +1,9 @@
 class ApplicationController < ActionController::API
   before_action :authorized
 
-  @secret = ENV["RAILS_AUTH_LECTURE_SECRET_KEY"]
+  def initialize
+    @secret = ENV["RAILS_AUTH_LECTURE_SECRET_KEY"]
+  end
 
   def auth_header
     request.headers["Authorization"]
@@ -15,16 +17,16 @@ class ApplicationController < ActionController::API
     if auth_header
       token = auth_header.split(" ")[1]
       begin
-        JWT.decode(token, @secret)[0]
+        return JWT.decode(token, @secret)[0]
       rescue JWT::DecodeError
-        nil
+        return nil
       end
     end
   end
 
   def current_user
     if decoded_token
-      user_id = decoded_token[0]["user_id"]
+      user_id = decoded_token["user_id"]
       @user = User.find_by(id: user_id)
     else
       nil
